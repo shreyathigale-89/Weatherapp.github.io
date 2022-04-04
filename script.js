@@ -38,7 +38,10 @@ function getWeatherReport(city)
     fetch(`${weatherApi.baseUrl}?q=${city}&appid=${weatherApi.key}&units=metric`)
     .then(weather =>{         //if response if succesful 
         return weather.json();  // overt into json format
-    }).then(showWeatherReport);
+    }).then(showWeatherReport)
+    .error(e){
+        alert("Enter the correct city name ..");
+    }
 }
 
 //Show weather report
